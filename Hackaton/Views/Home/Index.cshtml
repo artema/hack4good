@@ -1,30 +1,161 @@
-﻿
-@{
-    ViewBag.Title = "Home";
+﻿@{
+    ViewBag.Title = "hack4good";
 }
 
 <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-<style>
-    body, html {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    #map {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100px;
-        bottom: 0;
-        min-height: 400px;
-    }
-</style>
-
 <div id="map"></div>
+
+<div id="head">
+    <div id="logo"><img src="/Content/Images/u6.png" /> WWF Life</div>
+    <div id="search">
+        <form action="/Home/Search" method="POST">
+            <input type="text" name="q" placeholder="искать место на карте" />
+            <input type="submit" value="искать" />
+        </form>
+    </div>
+    <div id="login">
+        <img class="login-avatar" src="/Content/Images/u8.png" />
+        <span>Вы вошли как</span><br/><a href="https://www.facebook.com/ilia.chernushov" class="login-name">Илья Чернышов</a>
+        <a href="#" class="login-logout"><img src="/Content/Images/u14.png" /></a>
+    </div>
+</div>
+
+<div id="main">
+    <table id="main-table">
+        <tr>
+            <td id="main-button">
+                <button>+ посадить новое дерево</button>
+            </td>
+        </tr>
+        <tr>
+            <td id="main-top">
+                <b class="main-top-header">Ваш результат</b>
+                <table id="main-table-top">
+                    <tr>
+                        <td rowspan="2">
+                            <p class="main-top-left"><b>17</b> высаженных виртуальных деревьев</p>
+                        </td>
+                        <td>
+                            <p class="main-top-stats"><img src="/Content/Images/u41.jpeg"/><a href="#">163</a> позиция в Москве</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="main-top-stats"><img src="/Content/Images/u33.png" /><a href="#">122675</a> позиция в мире</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td id="main-bottom">
+                <div class="main-feed-head">
+                    <b class="main-feed-head-title">Лента</b>
+                    <div class="main-feed-head-source">
+                        <label><input type="radio" name="feed" value="0" checked="checked" />в мире</label>
+                        <label><input type="radio" name="feed" value="1" />в Москве</label>
+                        <label>другой город</label>
+                    </div>
+                </div>
+                <div id="main-bottom-container">
+                    <table>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Content/Images/u8.png" /></td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
 
 <script type="text/javascript">
     var myMap;
@@ -32,10 +163,24 @@
 
     function init() {
         myMap = new ymaps.Map('map', {
-            center: [55.76, 37.64], // Москва
-            zoom: 10,
-            controls: ["zoomControl", "geolocationControl"]
+            center: [55.749699, 37.650388],
+            zoom: 17,
+            controls: []
         });
+
+        myMap.controls.add('zoomControl', { position: { top: '100px', right: '10px' } });
+        myMap.controls.add('geolocationControl', { position: { top: '50px', right: '10px' } });
+
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                myMap.setCenter([position.coords.latitude, position.coords.longitude], 17);
+            },
+            function() {},
+            {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 1000
+            }
+        );
     }
 </script>
-

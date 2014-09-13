@@ -80,7 +80,7 @@ namespace Hackaton
 
         private static Bundle GetStylesBundle()
         {
-            var bundle = new StyleBundle(GetBundlePath(Bundles.Styles));
+            var bundle = new Bundle(GetBundlePath(Bundles.Styles));
 
             bundle.Include(
                 "~/Content/Styles/main.css"
@@ -91,7 +91,7 @@ namespace Hackaton
 
         private static Bundle GetScriptsBundle()
         {
-            var bundle = new ScriptBundle(GetBundlePath(Bundles.Scripts));
+            var bundle = new Bundle(GetBundlePath(Bundles.Scripts));
 
             bundle.Include(
                 "~/Content/Scripts/App/main.js"
