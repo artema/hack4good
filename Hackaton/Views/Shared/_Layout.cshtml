@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapCSS))
+    @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapTheme))
+</head>
+<body class="body-content">
+    <div>
+        @RenderBody()
+    </div>
+
+    @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.JQuery))
+    @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapScript))
+    @RenderSection("scripts", required: false)
+</body>
+</html>
