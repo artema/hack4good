@@ -71,7 +71,8 @@ namespace Hackaton
 
             bundle.Include(
                 "~/Content/Bootstrap/bootstrap.css",
-                "~/Content/Bootstrap/site.css"
+                "~/Content/Bootstrap/site.css",
+                "~/Content/normalize.css"
             );
 
             return bundle;
