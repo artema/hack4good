@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Hackaton.Models;
 
 namespace Hackaton.Controllers
 {
@@ -7,7 +8,10 @@ namespace Hackaton.Controllers
         // GET: Default
         public ActionResult Index()
         {
-            return View();
+            using (var model = new MainModelContainer())
+            {
+                return View();
+            }
         }
     }
 }
