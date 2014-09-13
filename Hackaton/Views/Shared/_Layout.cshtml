@@ -2,11 +2,12 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>@ViewBag.Title</title>
 
     @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapCSS))
     @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapTheme))
+    @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.Styles))
 </head>
 <body class="body-content">
     <div>
@@ -15,6 +16,7 @@
 
     @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.JQuery))
     @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapScript))
+    @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.Scripts))
     @RenderSection("scripts", required: false)
 </body>
 </html>

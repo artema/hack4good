@@ -10,6 +10,9 @@ namespace Hackaton
             BootstrapScript,
             BootstrapCSS,
             BootstrapTheme,
+            AngularJS,
+            Styles,
+            Scripts
         }
 
 
@@ -22,9 +25,12 @@ namespace Hackaton
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(GetJQueryBundle());
+            bundles.Add(GetAngularBundle());
             bundles.Add(GetBootstrapScriptBundle());
             bundles.Add(GetBootstrapCSSBundle());
             bundles.Add(GetBootstrapThemeBundle());
+            bundles.Add(GetStylesBundle());
+            bundles.Add(GetScriptsBundle());
 
             BundleTable.EnableOptimizations = true;
         }
@@ -71,12 +77,49 @@ namespace Hackaton
             return bundle;
         }
 
+        private static Bundle GetStylesBundle()
+        {
+            var bundle = new StyleBundle(GetBundlePath(Bundles.Styles));
+
+            bundle.Include(
+                "~/Content/Styles/main.css"
+            );
+
+            return bundle;
+        }
+
+        private static Bundle GetScriptsBundle()
+        {
+            var bundle = new ScriptBundle(GetBundlePath(Bundles.Scripts));
+
+            bundle.Include(
+                "~/Content/Scripts/App/main.js"
+            );
+
+            return bundle;
+        }
 
         private static Bundle GetBootstrapThemeBundle()
         {
             var bundle = new StyleBundle(GetBundlePath(Bundles.BootstrapTheme));
 
             bundle.Include("~/Content/Bootstrap/bootstrap-theme.css");
+
+            return bundle;
+        }
+
+        private static Bundle GetAngularBundle()
+        {
+            var bundle = new ScriptBundle(GetBundlePath(Bundles.AngularJS));
+
+            bundle.Include(
+                "~/Scripts/angular.min.js",
+                "~/Scripts/angular-resource.min.js",
+                "~/Scripts/angular-route.min.js",
+                "~/Scripts/angular-animate.min.js",
+                "~/Scripts/angular-loader.min.js",
+                "~/Scripts/angular-touch.min.js"
+            );
 
             return bundle;
         }
