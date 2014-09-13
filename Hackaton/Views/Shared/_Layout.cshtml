@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>@ViewBag.Title</title>
 
     @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapCSS))
@@ -10,13 +11,12 @@
     @Styles.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.Styles))
 </head>
 <body class="body-content">
-    <div>
-        @RenderBody()
-    </div>
-
     @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.JQuery))
     @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.BootstrapScript))
     @Scripts.Render(BundleConfig.GetBundlePath(BundleConfig.Bundles.Scripts))
     @RenderSection("scripts", required: false)
-</body>
+
+    @RenderBody()
+    
+    </body>
 </html>
