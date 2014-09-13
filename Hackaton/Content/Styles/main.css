@@ -175,8 +175,33 @@ padding-right:10px;
 height:30px;
 }
 
+.main-feed-head-title{
+float:left;
+padding-right:2em;
+color:#777;
+}
+.main-feed-head-source label{
+padding-right:0.5em;
+font-weight:normal;
+color:#3374ff;
+cursor:pointer;
+}
+.main-feed-head-source label input{
+margin-right:5px;
+}
 
-
+#main-bottom table td:last-child{
+font-size:0.9em;
+line-height:1.3em;
+color:#555;
+font-style:italic;
+}
+.feed-name, .feed-address{
+font-style:normal;
+}
+.feed-date{
+font-size:0.9em;
+}
 
 
 
