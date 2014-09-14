@@ -218,7 +218,19 @@ body, html {
   font-size: 0.9em;
 }
 
-
+#balloon{
+ position:absolute;
+ left: 20px;
+ right:20px;
+ top:20px;
+ background:rgba(255,255,255,0.8);
+border:2px solid yellow;
+padding:0.5em;
+text-align:center;
+}
+#balloon h1{
+font-size:1em;
+}
 
 
 
