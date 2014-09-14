@@ -1,6 +1,0 @@
-#!/usr/bin/env node
-var app = require('../server/app');
-
-var server = app.listen(process.env.PORT || 8080, function() {
-  console.log("App listening on port " + server.address().port);
-});
