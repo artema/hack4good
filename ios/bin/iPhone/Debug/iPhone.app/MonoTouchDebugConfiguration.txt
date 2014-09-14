@@ -1,3 +1,0 @@
-IP: 172.18.30.155
-USB Debugging: 1
-Port: 10000

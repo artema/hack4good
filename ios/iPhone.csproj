@@ -93,10 +93,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Model1.cs" />
-    <Compile Include="Views\RazorView.cs">
-      <DependentUpon>RazorView.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="HybridViewController.cs" />
@@ -105,9 +101,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\RazorView.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-    </None>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
