@@ -13,6 +13,7 @@
 	app.engine('.manifest', require('ejs').renderFile);
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'jade');
+	app.set('view options', { pretty: true });
 
 	app.enable('trust proxy');
 
