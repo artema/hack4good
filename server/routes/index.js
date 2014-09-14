@@ -84,9 +84,62 @@ router.get('/', function(req, res){
 		}
 	];
 
+	var top = [
+		{
+			name: 'Илья Чернышов',
+			img: 'u8.png',
+			address: 'Москва',
+			date: '13.09.2014',
+			score: '17'
+		},
+		{
+			name: 'Zo Thura',
+			img: 'u73.png',
+			address: 'Москва',
+			date: '16.07.2014',
+			score: '14'
+		},
+		{
+			name: 'Семен Кравцев',
+			img: 'u81.png',
+			address: 'Москва',
+			date: '10.07.2014',
+			score: '15'
+		},
+		{
+			name: 'Анатолий Фролов',
+			img: 'u65.png',
+			address: 'Санкт-Петербург',
+			date: '10.07.2014',
+			score: '11'
+		},
+		{
+			name: 'Жанна Амурова',
+			img: 'u217.png',
+			address: 'Зеленоград',
+			date: '09.07.2014',
+			score: '7'
+		},
+		{
+			name: 'Коля Демидов',
+			img: 'u207.png',
+			address: 'Подольск',
+			date: '13.09.2014',
+			score: '5'
+		},
+		{
+			name: 'Анна Каролова',
+			img: 'u197.png',
+			address: 'Москва',
+			date: '05.07.2014',
+			score: '4'
+		}
+	];
+
 	res.render('index.html', {
 		stats: stats,
 		feed: feed,
+		top: top,
 		pretty: true
 	});
 });

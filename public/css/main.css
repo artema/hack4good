@@ -155,14 +155,14 @@ body, html {
   line-height: 1em;
 }
 
-#main-bottom {
+.main-bottom {
   background: #fff;
   border: 1px solid #ccc;
   padding: 10px;
   position: relative;
 }
 
-#main-bottom-container {
+.main-bottom-container {
   overflow-x: hidden;
   overflow-y: scroll;
   position: absolute;
@@ -172,17 +172,17 @@ body, html {
   bottom: 10px;
 }
 
-#main-bottom table td {
+.main-bottom table td {
   padding-bottom: 0.5em;
   vertical-align: top;
 }
 
-#main-bottom table td:first-child {
+.main-bottom table td.feed-photo-cell {
   width: 30px;
   padding-right: 10px;
 }
 
-#main-bottom table td:first-child img {
+.main-bottom table td.feed-photo-cell img {
   height: 30px;
 }
 
@@ -203,7 +203,7 @@ body, html {
   margin-right: 5px;
 }
 
-#main-bottom table td:last-child {
+.main-bottom table td.feed-main-cell {
   font-size: 0.9em;
   line-height: 1.3em;
   color: #555;
@@ -233,16 +233,51 @@ font-size:1em;
 }
 
 
+#right {
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  left: 410px;
+  top: 50px;
+  width: 400px;
+  bottom: 10px;
+  overflow: hidden;
+}
 
+#right .main-bottom{
+top:40px;
+padding:10px;
+margin:10px;
+height:300px;
+}
 
+.feed-position{
+color:#777;
+font-size:0.8em;
+line-height:1.0em;
+display:block;
+padding-right:10px;
+}
 
+.feed-score{
+font-size:2.5em;
+line-hegith:1.0em;
+position:relative;
+top:-10px;
+display:block;
+padding-left:10px;
+}
 
+#right{
+display:none;
+}
 
-
-
-
-
-
+.feed-close{
+position:absolute;
+right:10px;
+top:7px;
+cursor:pointer;
+font-size:0.9em;
+}
 
 
 
